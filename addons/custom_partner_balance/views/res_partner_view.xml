@@ -4,8 +4,34 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="after">
-                    <field name="balance"/>
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
+                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Solde Fournisseur</div>
+                        <div style="font-size: 18px; font-weight: bold;">
+                            <field name="solde_fournisseur" decoration-danger="solde_fournisseur &gt; 0" decoration-success="solde_fournisseur &lt;= 0"/>
+                        </div>
+                        <div style="font-size: 12px; font-style: italic; margin-top: 5px;">
+                            <field name="label_solde_fournisseur"/>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
+                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Solde Client</div>
+                        <div style="font-size: 18px; font-weight: bold;">
+                            <field name="solde_client" decoration-danger="solde_client &gt; 0" decoration-success="solde_client &lt;= 0"/>
+                        </div>
+                        <div style="font-size: 12px; font-style: italic; margin-top: 5px;">
+                            <field name="label_solde_client"/>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
+                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Balance</div>
+                        <div style="font-size: 18px; font-weight: bold;">
+                            <field name="total_balance" decoration-danger="total_balance &gt; 0" decoration-success="total_balance &lt;= 0"/>
+                        </div>
+                        <div style="font-size: 12px; color: #888; margin-top: 5px;">Total</div>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>
