@@ -15,25 +15,45 @@
                         .balance-card {
                             flex: 1;
                             min-width: 200px;
-                            padding: 12px;
+                            max-height: 90px;
+                            padding: 10px 12px;
                             border: 1px solid #ccc;
                             border-radius: 4px;
                             text-align: center;
                             background: #f8f9fa;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
                         }
+
                         .balance-card-label {
                             font-weight: bold;
                             font-size: 14px;
-                            margin-bottom: 8px;
+                            margin-bottom: 4px;
                         }
                         .balance-card-value {
-                            font-size: 18px;
+                            font-size: 20px;
                             font-weight: bold;
                         }
                         .balance-card-subtitle {
-                            font-size: 12px;
+                            font-size: 11px;
                             font-style: italic;
-                            margin-top: 5px;
+                            margin-top: 4px;
+                            color: #888;
+                        }
+                        .balance-card-label {
+                            font-weight: bold;
+                            font-size: 12px;
+                            margin-bottom: 2px;
+                        }
+                        .balance-card-value {
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                        .balance-card-subtitle {
+                            font-size: 10px;
+                            font-style: italic;
+                            margin-top: 2px;
                             color: #888;
                         }
                         @media (max-width: 768px) {
@@ -43,18 +63,19 @@
                             }
                             .balance-card {
                                 min-width: 100px;
-                                padding: 8px;
+                                max-height: 80px;
+                                padding: 8px 8px;
                             }
                             .balance-card-label {
                                 font-size: 11px;
-                                margin-bottom: 4px;
+                                margin-bottom: 2px;
                             }
                             .balance-card-value {
-                                font-size: 14px;
+                                font-size: 16px;
                             }
                             .balance-card-subtitle {
-                                font-size: 10px;
-                                margin-top: 3px;
+                                font-size: 9px;
+                                margin-top: 2px;
                             }
                         }
                         @media (max-width: 480px) {
@@ -63,16 +84,17 @@
                             }
                             .balance-card {
                                 min-width: 80px;
-                                padding: 6px;
+                                max-height: 70px;
+                                padding: 6px 4px;
                             }
                             .balance-card-label {
                                 font-size: 10px;
                             }
                             .balance-card-value {
-                                font-size: 12px;
+                                font-size: 13px;
                             }
                             .balance-card-subtitle {
-                                font-size: 9px;
+                                font-size: 8px;
                             }
                         }
                     </style>
