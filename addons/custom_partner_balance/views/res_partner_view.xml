@@ -5,31 +5,103 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('oe_title')]" position="before">
-                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
-                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Solde Fournisseur</div>
-                        <div style="font-size: 18px; font-weight: bold;">
+                <xpath expr="." position="inside">
+                    <style>
+                        .balance-cards-container {
+                            display: flex;
+                            gap: 10px;
+                            margin-bottom: 10px;
+                        }
+                        .balance-card {
+                            flex: 1;
+                            min-width: 200px;
+                            padding: 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            text-align: center;
+                            background: #f8f9fa;
+                        }
+                        .balance-card-label {
+                            font-weight: bold;
+                            font-size: 14px;
+                            margin-bottom: 8px;
+                        }
+                        .balance-card-value {
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                        .balance-card-subtitle {
+                            font-size: 12px;
+                            font-style: italic;
+                            margin-top: 5px;
+                            color: #888;
+                        }
+                        @media (max-width: 768px) {
+                            .balance-cards-container {
+                                gap: 5px;
+                                margin-bottom: 8px;
+                            }
+                            .balance-card {
+                                min-width: 100px;
+                                padding: 8px;
+                            }
+                            .balance-card-label {
+                                font-size: 11px;
+                                margin-bottom: 4px;
+                            }
+                            .balance-card-value {
+                                font-size: 14px;
+                            }
+                            .balance-card-subtitle {
+                                font-size: 10px;
+                                margin-top: 3px;
+                            }
+                        }
+                        @media (max-width: 480px) {
+                            .balance-cards-container {
+                                gap: 4px;
+                            }
+                            .balance-card {
+                                min-width: 80px;
+                                padding: 6px;
+                            }
+                            .balance-card-label {
+                                font-size: 10px;
+                            }
+                            .balance-card-value {
+                                font-size: 12px;
+                            }
+                            .balance-card-subtitle {
+                                font-size: 9px;
+                            }
+                        }
+                    </style>
+                </xpath>
+                <div class="balance-cards-container">
+                    <div class="balance-card">
+                        <div class="balance-card-label">Solde Fournisseur</div>
+                        <div class="balance-card-value">
                             <field name="solde_fournisseur" decoration-danger="solde_fournisseur &gt; 0" decoration-success="solde_fournisseur &lt;= 0"/>
                         </div>
-                        <div style="font-size: 12px; font-style: italic; margin-top: 5px;">
+                        <div class="balance-card-subtitle">
                             <field name="label_solde_fournisseur"/>
                         </div>
                     </div>
-                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
-                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Solde Client</div>
-                        <div style="font-size: 18px; font-weight: bold;">
+                    <div class="balance-card">
+                        <div class="balance-card-label">Solde Client</div>
+                        <div class="balance-card-value">
                             <field name="solde_client" decoration-danger="solde_client &gt; 0" decoration-success="solde_client &lt;= 0"/>
                         </div>
-                        <div style="font-size: 12px; font-style: italic; margin-top: 5px;">
+                        <div class="balance-card-subtitle">
                             <field name="label_solde_client"/>
                         </div>
                     </div>
-                    <div style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center; background: #f8f9fa;">
-                        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">Balance</div>
-                        <div style="font-size: 18px; font-weight: bold;">
+                    <div class="balance-card">
+                        <div class="balance-card-label">Balance</div>
+                        <div class="balance-card-value">
                             <field name="total_balance" decoration-danger="total_balance &gt; 0" decoration-success="total_balance &lt;= 0"/>
                         </div>
-                        <div style="font-size: 12px; color: #888; margin-top: 5px;">Total</div>
+                        <div class="balance-card-subtitle">Total</div>
                     </div>
                 </div>
             </xpath>
